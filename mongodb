@@ -1,0 +1,444 @@
+MongoDB
+
+show dbs
+use dbname
+show collections
+db.collections name.find()
+
+
+db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}]})
+db.Employees.find({$and:[{"experience":{$gte:2}},{"experience":{$lte:6}}]})
+
+db.Employees.find({$or:[{"experience":{$lte:3}},{"location":"chennai"}]})
+
+db.Employees.find({$and:[{"experience":{$gte:2}},{"location":"chennai"}]})
+
+
+
+icrosoft Windows [Version 10.0.26100.3915]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\GLOBAL>mongosh "mongodb+srv://cluster0.dmdaqpj.mongodb.net/" --apiVersion 1 --username lenin7955
+Enter password: **********
+Current Mongosh Log ID: 6838301f74739af0c06c4bcf
+Connecting to:          mongodb+srv://<credentials>@cluster0.dmdaqpj.mongodb.net/?appName=mongosh+2.5.1
+Using MongoDB:          8.0.9 (API Version 1)
+Using Mongosh:          2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-cuhobi-shard-0 [primary] test> use lenin
+switched to db lenin
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find()
+[
+  {
+    _id: ObjectId('6834433d73269896c19499d8'),
+    technology: 'mern',
+    experience: 1,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem',
+    'expert name': 'lenin'
+  },
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('68358d27bb64e0116f6c4bd0'),
+    'expert name': 'jeeva',
+    technology: 'python',
+    experience: 2,
+    skills: { frontend: 'django', backend: 'python' },
+    location: 'nammakal'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd1'),
+    'expert name': 'dinesh',
+    technology: 'java',
+    experience: 4,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'banglore'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd2'),
+    'expert name': 'balaji',
+    technology: 'python',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'c' },
+    location: 'coimbatore'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"technology":"mern"})
+[
+  {
+    _id: ObjectId('6834433d73269896c19499d8'),
+    technology: 'mern',
+    experience: 1,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem',
+    'expert name': 'lenin'
+  },
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"technology":Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"technology":"mern"})
+[
+  {
+    _id: ObjectId('6834433d73269896c19499d8'),
+    technology: 'mern',
+    experience: 1,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem',
+    'expert name': 'lenin'
+  },
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
+Uncaught:
+SyntaxError: Unexpected character ''. (1:19)
+
+> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
+    |                    ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
+Uncaught:
+SyntaxError: Unexpected token (1:48)
+
+> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
+    |                                                 ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}}])
+Uncaught:
+SyntaxError: Unexpected token (1:48)
+
+> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}}])
+    |                                                 ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:73)
+
+> 1 | db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}])
+    |                                                                          ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}]})
+[
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd1'),
+    'expert name': 'dinesh',
+    technology: 'java',
+    experience: 4,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'banglore'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd2'),
+    'expert name': 'balaji',
+    technology: 'python',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'c' },
+    location: 'coimbatore'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:2}},{"experience":{$lte:6}}]})
+[
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('68358d27bb64e0116f6c4bd0'),
+    'expert name': 'jeeva',
+    technology: 'python',
+    experience: 2,
+    skills: { frontend: 'django', backend: 'python' },
+    location: 'nammakal'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd1'),
+    'expert name': 'dinesh',
+    technology: 'java',
+    experience: 4,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'banglore'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd2'),
+    'expert name': 'balaji',
+    technology: 'python',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'c' },
+    location: 'coimbatore'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$or:[{"experience":{$lte:3}},{"location":"chennai"}]})
+[
+  {
+    _id: ObjectId('6834433d73269896c19499d8'),
+    technology: 'mern',
+    experience: 1,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem',
+    'expert name': 'lenin'
+  },
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('68358d27bb64e0116f6c4bd0'),
+    'expert name': 'jeeva',
+    technology: 'python',
+    experience: 2,
+    skills: { frontend: 'django', backend: 'python' },
+    location: 'nammakal'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:2}},{"location":"chennai"}]})
+[
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"location":{$in:["namakkal","chennai","rasipuram"]}})
+[
+  {
+    _id: ObjectId('6834473581cabd2e156c4bd1'),
+    'expert name': 'deva',
+    technology: 'mern',
+    experience: 2,
+    skills: { frontend: 'angular', backend: 'python' },
+    location: 'rasipuram'
+  },
+  {
+    _id: ObjectId('68344b8b81cabd2e156c4bd2'),
+    'expert name': 'annamalai',
+    technology: 'java',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'flask' },
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd4'),
+    'expert name': 'selva',
+    technology: 'mern',
+    experience: 3,
+    skills: { frontend: 'react', backend: 'express' },
+    location: 'chennai'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"location":{$nin:["namakkal","chennai","rasipuram"]}})
+[
+  {
+    _id: ObjectId('6834433d73269896c19499d8'),
+    technology: 'mern',
+    experience: 1,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem',
+    'expert name': 'lenin'
+  },
+  {
+    _id: ObjectId('68358d27bb64e0116f6c4bd0'),
+    'expert name': 'jeeva',
+    technology: 'python',
+    experience: 2,
+    skills: { frontend: 'django', backend: 'python' },
+    location: 'nammakal'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd1'),
+    'expert name': 'dinesh',
+    technology: 'java',
+    experience: 4,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'banglore'
+  },
+  {
+    _id: ObjectId('6835950dbb64e0116f6c4bd2'),
+    'expert name': 'balaji',
+    technology: 'python',
+    experience: 5,
+    skills: { frontend: 'angular', backend: 'c' },
+    location: 'coimbatore'
+  },
+  {
+    _id: ObjectId('68359727bb64e0116f6c4bd3'),
+    'expert name': 'dharun',
+    technology: 'mern',
+    experience: 5,
+    skills: { frontend: 'react', backend: 'node' },
+    location: 'salem'
+  }
+] db.supermarket.find({"supermarket_place":{$in:["attur"]}})
+
+ db.supermarket.find({"supermarket_place":{$nin:["attur"]}})
+
+ db.supermarket.find({"product_id":2})
+
+ db.supermarket.find({"product_quantity":{$gte:150}})
+
+ db.supermarket.find({"product_quantity":{$lte:150}})
+
+ db.supermarket.find({"product_quantity":200})
+
+   db.supermarket.find({$and:[{"product_price":{$gte:50}},{"product_quantity":{$lte:150}}]})
+
+ db.supermarket.find({"product_price":{$gte:20}})
+
+ db.supermarket.find({"product_price":{$lte:80}})
+
+ db.supermarket.find({"product_name": /.*t.*/ })
