@@ -1,0 +1,19 @@
+db.supermarket.find({"supermarket_place":{$in:["attur"]}})
+
+ db.supermarket.find({"supermarket_place":{$nin:["attur"]}})
+
+ db.supermarket.find({"product_id":2})
+
+ db.supermarket.find({"product_quantity":{$gte:150}})
+
+ db.supermarket.find({"product_quantity":{$lte:150}})
+
+ db.supermarket.find({"product_quantity":200})
+
+   db.supermarket.find({$and:[{"product_price":{$gte:50}},{"product_quantity":{$lte:150}}]})
+
+ db.supermarket.find({"product_price":{$gte:20}})
+
+ db.supermarket.find({"product_price":{$lte:80}})
+
+ db.supermarket.find({"product_name": /.*t.*/ })
