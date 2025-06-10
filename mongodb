@@ -15,7 +15,7 @@ db.Employees.find({$and:[{"experience":{$gte:2}},{"location":"chennai"}]})
 
 
 
-icrosoft Windows [Version 10.0.26100.3915]
+Microsoft Windows [Version 10.0.26100.3915]
 (c) Microsoft Corporation. All rights reserved.
 
 C:\Users\GLOBAL>mongosh "mongodb+srv://cluster0.dmdaqpj.mongodb.net/" --apiVersion 1 --username lenin7955
@@ -166,39 +166,7 @@ Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"technology":Atla
     location: 'chennai'
   }
 ]
-Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
-Uncaught:
-SyntaxError: Unexpected character ''. (1:19)
-
-> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
-    |                    ^
-  2 |
-
-Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
-Uncaught:
-SyntaxError: Unexpected token (1:48)
-
-> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}})
-    |                                                 ^
-  2 |
-
-Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}}])
-Uncaught:
-SyntaxError: Unexpected token (1:48)
-
-> 1 | db.Employees.find({$and:[{"experience":{$gte:4},{"experience":{$lte:6}}])
-    |                                                 ^
-  2 |
-
-Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}])
-Uncaught:
-SyntaxError: Unexpected token, expected "," (1:73)
-
-> 1 | db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}])
-    |                                                                          ^
-  2 |
-
-Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}]})
+las-cuhobi-shard-0 [primary] lenin> db.Employees.find({$and:[{"experience":{$gte:4}},{"experience":{$lte:6}}]})
 [
   {
     _id: ObjectId('68344b8b81cabd2e156c4bd2'),
@@ -423,22 +391,4 @@ Atlas atlas-cuhobi-shard-0 [primary] lenin> db.Employees.find({"location":{$nin:
     skills: { frontend: 'react', backend: 'node' },
     location: 'salem'
   }
-] db.supermarket.find({"supermarket_place":{$in:["attur"]}})
-
- db.supermarket.find({"supermarket_place":{$nin:["attur"]}})
-
- db.supermarket.find({"product_id":2})
-
- db.supermarket.find({"product_quantity":{$gte:150}})
-
- db.supermarket.find({"product_quantity":{$lte:150}})
-
- db.supermarket.find({"product_quantity":200})
-
-   db.supermarket.find({$and:[{"product_price":{$gte:50}},{"product_quantity":{$lte:150}}]})
-
- db.supermarket.find({"product_price":{$gte:20}})
-
- db.supermarket.find({"product_price":{$lte:80}})
-
- db.supermarket.find({"product_name": /.*t.*/ })
+] 
