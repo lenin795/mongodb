@@ -287,8 +287,6 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({$and:[{"director":"sh
     director: 'shankar'
   }
 ]
-Atlas atlas-cuhobi-shard-0 [primary] films>
-
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.updateOne({"filmname":"Enthiran"},{$set:{"technical":{"runtime":120}}})
 {
   acknowledged: true,
@@ -297,8 +295,6 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.updateOne({"filmname":"Enth
   modifiedCount: 1,
   upsertedCount: 0
 }
-Atlas atlas-cuhobi-shard-0 [primary] films> db.fims.find()
-
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
 [
   {
@@ -516,12 +512,13 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.updateOne({"filmname":"leo"
   modifiedCount: 1,
   upsertedCount: 0
 }
-Atlas atlas-cuhobi-shard-0 [primary] films> db.films.findOne({"filmname":2.0}).genre
-TypeError: Cannot read properties of null (reading 'genre')
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.findOne({"filmname":"2.0"}).genre
 [ 'action', 'sci-fic' ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.findOne({"filmname":"leo"}).genre
 [ 'action', 'thriller' ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"genre":"sci-fic"})
 [
   {
