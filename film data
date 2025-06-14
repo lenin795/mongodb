@@ -1,0 +1,318 @@
+Microsoft Windows [Version 10.0.26100.4351]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\GLOBAL>mongosh "mongodb+srv://cluster0.dmdaqpj.mongodb.net/" --apiVersion 1 --username lenin7955
+Enter password: **********
+Current Mongosh Log ID: 684d066f53e7524a656c4bcf
+Connecting to:          mongodb+srv://<credentials>@cluster0.dmdaqpj.mongodb.net/?appName=mongosh+2.5.1
+Using MongoDB:          8.0.9 (API Version 1)
+Using Mongosh:          2.5.1
+mongosh 2.5.2 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-cuhobi-shard-0 [primary] test> show dbs
+lenin         272.00 KiB
+mobiledata     56.00 KiB
+sample_mflix  168.84 MiB
+supermarket    72.00 KiB
+admin         352.00 KiB
+local          64.71 GiB
+Atlas atlas-cuhobi-shard-0 [primary] test> use lenin
+switched to db lenin
+Atlas atlas-cuhobi-shard-0 [primary] lenin> show collections
+bike
+employees
+Employees
+sample
+supermarket
+Atlas atlas-cuhobi-shard-0 [primary] lenin> use films
+switched to db films
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
+
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwary rai","budget":150,"director":"shankar")
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:26)
+
+> 1 | db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwary rai","budget":150,"director":"shankar")
+    |                           ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar")
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:26)
+
+> 1 | db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar")
+    |                           ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('684d077d53e7524a656c4bd0') }
+}
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"2.0","hero":"rajinikanth","heroine":"amyjakson","budget":543,"director":"shankar"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('684d07a753e7524a656c4bd1') }
+}
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"petta","hero":"rajinikanth","heroine":"trisha","budget":250,"director":"karthiksubraj"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('684d07dd53e7524a656c4bd2') }
+}
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
+[
+  {
+    _id: ObjectId('684d077d53e7524a656c4bd0'),
+    filmname: 'Enthiran',
+    hero: 'rajinikanth',
+    heroine: 'aishwaryrai',
+    budget: 150,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"Beast","hero":"vijay","heroine":"pooja hedge","budget":200,"director":"nelson"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('684d084d53e7524a656c4bd3') }
+}
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"leo","hero":"vijay","heroine":"trisha","budget":400,"director":"lokesh kanakaraj"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('684d087b53e7524a656c4bd4') }
+}
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
+[
+  {
+    _id: ObjectId('684d077d53e7524a656c4bd0'),
+    filmname: 'Enthiran',
+    hero: 'rajinikanth',
+    heroine: 'aishwaryrai',
+    budget: 150,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  },
+  {
+    _id: ObjectId('684d084d53e7524a656c4bd3'),
+    filmname: 'Beast',
+    hero: 'vijay',
+    heroine: 'pooja hedge',
+    budget: 200,
+    director: 'nelson'
+  },
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"filmname":"leo"})
+[
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gte:200}})
+[
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  },
+  {
+    _id: ObjectId('684d084d53e7524a656c4bd3'),
+    filmname: 'Beast',
+    hero: 'vijay',
+    heroine: 'pooja hedge',
+    budget: 200,
+    director: 'nelson'
+  },
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gte:400}})
+[
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gt:200}})
+[
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  },
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lt:400}})
+[
+  {
+    _id: ObjectId('684d077d53e7524a656c4bd0'),
+    filmname: 'Enthiran',
+    hero: 'rajinikanth',
+    heroine: 'aishwaryrai',
+    budget: 150,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  },
+  {
+    _id: ObjectId('684d084d53e7524a656c4bd3'),
+    filmname: 'Beast',
+    hero: 'vijay',
+    heroine: 'pooja hedge',
+    budget: 200,
+    director: 'nelson'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lte:400}})
+[
+  {
+    _id: ObjectId('684d077d53e7524a656c4bd0'),
+    filmname: 'Enthiran',
+    hero: 'rajinikanth',
+    heroine: 'aishwaryrai',
+    budget: 150,
+    director: 'shankar'
+  },
+  {
+    _id: ObjectId('684d07dd53e7524a656c4bd2'),
+    filmname: 'petta',
+    hero: 'rajinikanth',
+    heroine: 'trisha',
+    budget: 250,
+    director: 'karthiksubraj'
+  },
+  {
+    _id: ObjectId('684d084d53e7524a656c4bd3'),
+    filmname: 'Beast',
+    hero: 'vijay',
+    heroine: 'pooja hedge',
+    budget: 200,
+    director: 'nelson'
+  },
+  {
+    _id: ObjectId('684d087b53e7524a656c4bd4'),
+    filmname: 'leo',
+    hero: 'vijay',
+    heroine: 'trisha',
+    budget: 400,
+    director: 'lokesh kanakaraj'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}]})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:64)
+
+> 1 | db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}]})
+    |                                                                 ^
+  2 |
+
+Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}}]})
+[
+  {
+    _id: ObjectId('684d07a753e7524a656c4bd1'),
+    filmname: '2.0',
+    hero: 'rajinikanth',
+    heroine: 'amyjakson',
+    budget: 543,
+    director: 'shankar'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] films>
