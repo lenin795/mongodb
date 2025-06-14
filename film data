@@ -1,6 +1,3 @@
-Microsoft Windows [Version 10.0.26100.4351]
-(c) Microsoft Corporation. All rights reserved.
-
 C:\Users\GLOBAL>mongosh "mongodb+srv://cluster0.dmdaqpj.mongodb.net/" --apiVersion 1 --username lenin7955
 Enter password: **********
 Current Mongosh Log ID: 684d066f53e7524a656c4bcf
@@ -8,7 +5,6 @@ Connecting to:          mongodb+srv://<credentials>@cluster0.dmdaqpj.mongodb.net
 Using MongoDB:          8.0.9 (API Version 1)
 Using Mongosh:          2.5.1
 mongosh 2.5.2 is available for download: https://www.mongodb.com/try/download/shell
-
 For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
 
 Atlas atlas-cuhobi-shard-0 [primary] test> show dbs
@@ -29,22 +25,6 @@ supermarket
 Atlas atlas-cuhobi-shard-0 [primary] lenin> use films
 switched to db films
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
-
-Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwary rai","budget":150,"director":"shankar")
-Uncaught:
-SyntaxError: Unexpected token, expected "," (1:26)
-
-> 1 | db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwary rai","budget":150,"director":"shankar")
-    |                           ^
-  2 |
-
-Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar")
-Uncaught:
-SyntaxError: Unexpected token, expected "," (1:26)
-
-> 1 | db.films.insert("filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar")
-    |                           ^
-  2 |
 
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"Enthiran","hero":"rajinikanth","heroine":"aishwaryrai","budget":150,"director":"shankar"})
 DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
@@ -296,14 +276,6 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lte:400}})
     director: 'lokesh kanakaraj'
   }
 ]
-Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}]})
-Uncaught:
-SyntaxError: Unexpected token, expected "," (1:64)
-
-> 1 | db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}]})
-    |                                                                 ^
-  2 |
-
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({$and:[{"director":"shankar"},{"budget":{$gte:200}}]})
 [
   {
