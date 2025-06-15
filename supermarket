@@ -318,4 +318,162 @@ Atlas atlas-cuhobi-shard-0 [primary] supermarket>  db.supermarket.find({"product
     supermarket_place: 'salem'
   }
 ]
-Atlas atlas-cuhobi-shard-0 [primary] supermarket>
+Atlas atlas-cuhobi-shard-0 [primary] supermarket>  db.supermarket.find({"product_price":{$gte:20}})
+[
+  {
+    _id: ObjectId('68397f7f09841203fc6c4bd0'),
+    product_id: 1,
+    product_name: 'milk',
+    product_price: 50,
+    product_category: [ 'dairy' ],
+    product_quantity: 50,
+    supermarket_name: 'bigbuy',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('6839800f09841203fc6c4bd1'),
+    product_id: 2,
+    product_name: 'bread',
+    product_price: 25,
+    product_category: [ 'bakery' ],
+    product_quantity: 100,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  },
+  {
+    _id: ObjectId('6839806f09841203fc6c4bd2'),
+    product_id: 3,
+    product_name: 'toothpaste',
+    product_price: 20,
+    product_category: [ 'personal care' ],
+    product_quantity: 150,
+    supermarket_name: 'velanmart',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('683980c409841203fc6c4bd3'),
+    product_id: 4,
+    product_name: 'cocunut oil',
+    product_price: 100,
+    product_category: [ 'oil' ],
+    product_quantity: 200,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  },
+  {
+    _id: ObjectId('6839819909841203fc6c4bd4'),
+    product_id: 5,
+    product_name: 'goldwinner',
+    product_price: 120,
+    product_category: [ 'oil' ],
+    product_quantity: 100,
+    supermarket_name: 'velanmart',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('683981dc09841203fc6c4bd5'),
+    product_id: 6,
+    product_name: 'toothbrush',
+    product_price: 30,
+    product_category: [ 'personalcare' ],
+    product_quantity: 200,
+    supermarket_name: 'bigbuy',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('6839821f09841203fc6c4bd6'),
+    product_id: 7,
+    product_name: 'apple',
+    product_price: 120,
+    product_category: [ 'friuts' ],
+    product_quantity: 100,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  },
+  {
+    _id: ObjectId('6839823209841203fc6c4bd7'),
+    product_id: 7,
+    product_name: 'orange',
+    product_price: 100,
+    product_category: [ 'friuts' ],
+    product_quantity: 150,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] supermarket>  db.supermarket.find({"product_price":{$lte:80}})
+[
+  {
+    _id: ObjectId('68397f7f09841203fc6c4bd0'),
+    product_id: 1,
+    product_name: 'milk',
+    product_price: 50,
+    product_category: [ 'dairy' ],
+    product_quantity: 50,
+    supermarket_name: 'bigbuy',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('6839800f09841203fc6c4bd1'),
+    product_id: 2,
+    product_name: 'bread',
+    product_price: 25,
+    product_category: [ 'bakery' ],
+    product_quantity: 100,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  },
+  {
+    _id: ObjectId('6839806f09841203fc6c4bd2'),
+    product_id: 3,
+    product_name: 'toothpaste',
+    product_price: 20,
+    product_category: [ 'personal care' ],
+    product_quantity: 150,
+    supermarket_name: 'velanmart',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('683981dc09841203fc6c4bd5'),
+    product_id: 6,
+    product_name: 'toothbrush',
+    product_price: 30,
+    product_category: [ 'personalcare' ],
+    product_quantity: 200,
+    supermarket_name: 'bigbuy',
+    supermarket_place: 'attur'
+  }
+]
+Atlas atlas-cuhobi-shard-0 [primary] supermarket>  db.supermarket.find({"product_name": /.*t.*/ })
+[
+  {
+    _id: ObjectId('6839806f09841203fc6c4bd2'),
+    product_id: 3,
+    product_name: 'toothpaste',
+    product_price: 20,
+    product_category: [ 'personal care' ],
+    product_quantity: 150,
+    supermarket_name: 'velanmart',
+    supermarket_place: 'attur'
+  },
+  {
+    _id: ObjectId('683980c409841203fc6c4bd3'),
+    product_id: 4,
+    product_name: 'cocunut oil',
+    product_price: 100,
+    product_category: [ 'oil' ],
+    product_quantity: 200,
+    supermarket_name: 'freshmart',
+    supermarket_place: 'salem'
+  },
+  {
+    _id: ObjectId('683981dc09841203fc6c4bd5'),
+    product_id: 6,
+    product_name: 'toothbrush',
+    product_price: 30,
+    product_category: [ 'personalcare' ],
+    product_quantity: 200,
+    supermarket_name: 'bigbuy',
+    supermarket_place: 'attur'
+  }
+]
