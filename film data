@@ -79,6 +79,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.insert({"filmname":"leo","h
   acknowledged: true,
   insertedIds: { '0': ObjectId('684d087b53e7524a656c4bd4') }
 }
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
 [
   {
@@ -122,6 +123,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find()
     director: 'lokesh kanakaraj'
   }
 ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"filmname":"leo"})
 [
   {
@@ -168,6 +170,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gte:200}})
     director: 'lokesh kanakaraj'
   }
 ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gte:400}})
 [
   {
@@ -187,6 +190,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gte:400}})
     director: 'lokesh kanakaraj'
   }
 ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gt:200}})
 [
   {
@@ -214,6 +218,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$gt:200}})
     director: 'lokesh kanakaraj'
   }
 ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lt:400}})
 [
   {
@@ -241,6 +246,7 @@ Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lt:400}})
     director: 'nelson'
   }
 ]
+
 Atlas atlas-cuhobi-shard-0 [primary] films> db.films.find({"budget":{$lte:400}})
 [
   {
